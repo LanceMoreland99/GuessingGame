@@ -33,15 +33,20 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        int count = 0;
-        int i = 0;
+//        int count = 0;
+//        int i = 0;
+//
+//        int randomNumber = (int) Math.round(Math.random() * 100); //this is the random int for the game
 
-        int randomNumber = (int) Math.round(Math.random() * 100); //this is the random int for the game
-
-        System.out.println("I guessed a random nummber, now you have 5 chances to guess it. Its between 1 and 100.");
+//        System.out.println("I guessed a random number, now you have 5 chances to guess it. Its between 1 and 100.");
 
         Scanner input = new Scanner(System.in);
         do{
+            int count = 0;
+            int i = 0;
+            int randomNumber = (int) Math.round(Math.random() * 100); //this is the random int for the game
+
+            System.out.println("I guessed a random number, now you have 5 chances to guess it. Its between 1 and 100.");
 
             do{
                 try {
@@ -69,7 +74,8 @@ public class Main {
                 i++;
             }while(i < 5);
 
-            System.out.println("You fail! Would you like to try again? y/n");
+            input.nextLine();
+            System.out.println("You fail! Your number was: " + randomNumber + ". Would you like to try again? y/n");
 
         }while(input.nextLine().toUpperCase().equals("Y"));
 
